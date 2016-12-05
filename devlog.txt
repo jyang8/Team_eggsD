@@ -4,4 +4,6 @@ DEVLOG:
           firstL -- TIMESTAMP\n
 <-------------------------------------->
 
-jessicaY -- 2016-12-05 00:15\n
+jessicaY -- 2016-12-05 00:15
+- added the design document
+- added submodule to upgraded-parakeet
