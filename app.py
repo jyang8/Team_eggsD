@@ -16,7 +16,7 @@ c = db.cursor()
 
 @app.route("/", methods = ['GET'])
 def new():
-    return
+    return render_template('home.html')
 
 """
 @app.route("/login/", methods = ['POST', 'GET'])
