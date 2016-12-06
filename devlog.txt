@@ -11,3 +11,7 @@ jessicaY -- 2016-12-05 00:15
 richardW -- 2016-12-05 11:57
 - added home.html
 - added bootstrap file (css)
+
+jessicaY -- 2016-12-06 11:46
+- added image.py
+- started writing getIngredient(), will test in class
