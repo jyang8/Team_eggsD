@@ -7,3 +7,7 @@ DEVLOG:
 jessicaY -- 2016-12-05 00:15
 - added the design document
 - added submodule to upgraded-parakeet
+
+richardW -- 2016-12-05 11:57
+- added home.html
+- added bootstrap file (css)
