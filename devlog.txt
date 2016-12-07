@@ -9,7 +9,7 @@ jessicaY -- 2016-12-05 00:15
 - added submodule to upgraded-parakeet
 
 richardW -- 2016-12-05 11:57
-- added home.html
+- added and wrote basic structure of home.html
 - added bootstrap file (css)
 
 jessicaY -- 2016-12-06 11:46
@@ -23,3 +23,6 @@ jessicaY -- 2016-12-06 13:49
 jessicaY -- 2016-12-06 20:45
 - wrote getArticle() and getImage() and related helper functions
 - found a potential problem with accented characters in getImageURL()
+
+richardW -- 2016-12-06 23:59
+- added and wrote basic structure of list.html
