@@ -20,9 +20,24 @@ jessicaY -- 2016-12-06 13:49
 - wrote more code for getIngredient()
 - found a potential problem with non-food terms returned by API
 
+issacK -- 2016-12-06 14:15
+- added ingredient.py
+- started writing searchIngredient using API from USDA
+
+issacK -- 2016-12-06 14:30
+- finish searchIngredient, return foods with id
+- start getNutrition
+
+issacK -- 2016-12-06 14:46
+- write most of getNutrition
+- still have bugs with return 
+
 jessicaY -- 2016-12-06 20:45
 - wrote getArticle() and getImage() and related helper functions
 - found a potential problem with accented characters in getImageURL()
 
 richardW -- 2016-12-06 23:59
 - added and wrote basic structure of list.html
+
+issacK -- 2016-12-07 00:20
+- found issue pushing from school, redid prior work and finished getNutrition 
