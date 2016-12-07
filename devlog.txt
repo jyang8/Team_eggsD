@@ -19,3 +19,7 @@ jessicaY -- 2016-12-06 11:46
 jessicaY -- 2016-12-06 13:49
 - wrote more code for getIngredient()
 - found a potential problem with non-food terms returned by API
+
+jessicaY -- 2016-12-06 20:45
+- wrote getArticle() and getImage() and related helper functions
+- found a potential problem with accented characters in getImageURL()
