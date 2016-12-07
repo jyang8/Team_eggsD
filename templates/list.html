@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>                                                                                                                                                                         
+     Search                                                                                                                                                               
+    </title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <table class="table table-hover">
+    {{% for i in search %}}
+    
+    <tr class="clickable-row" data-href="#">
+      <a class="btn btn-default">{{i}}</a>
+    </tr>
+    <!-- replace # with i or something -->
+    
+    {{% endfor %}}
+    </table>
+
+  </body>
+  
+</html>
