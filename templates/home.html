@@ -16,11 +16,11 @@
 
     <div class="container">
       
-      <form action="/list/">
+      <form action="/list/" method = "GET">
 	
 	<div class="form-group">
-	  <label for="ingredient">Text Search</label>
-	  <input type="text" class="form-control" id="ingredient" placeholder="Carrot">
+	  <label for="ingredient" name="ingredient">Text Search</label>
+	  <input name = "ingredient" type="text" class="form-control" id="ingredient" placeholder="Carrot">
 	</div>
 
 	<button type="submit" class="btn btn-default">Search</button>
