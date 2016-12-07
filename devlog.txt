@@ -24,6 +24,9 @@ issacK -- 2016-12-06 14:15
 - added ingredient.py
 - started writing searchIngredient using API from USDA
 
+jerryC -- 2016-12-06 14:20
+- Added primitive Flask framework
+
 issacK -- 2016-12-06 14:30
 - finish searchIngredient, return foods with id
 - start getNutrition

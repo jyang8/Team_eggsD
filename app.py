@@ -1,4 +1,5 @@
 from flask import Flask, render_template, session, redirect, url_for, request
+import utils
 #import flask
 #import sqlite3
 #import hashlib
@@ -17,6 +18,12 @@ c = db.cursor()
 @app.route("/", methods = ['GET'])
 def new():
     return render_template('home.html')
+
+@app.route("/list/", methods = ["GET"])
+def list():
+    if ('ingredient' in request.args()):
+        list = nutrition.searchIngredient(request.args['ingredient']);
+    return render_template('list.html', list = list)
 
 """
 @app.route("/login/", methods = ['POST', 'GET'])
