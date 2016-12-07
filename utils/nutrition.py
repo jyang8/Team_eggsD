@@ -3,7 +3,8 @@ import urllib2, json
 key = "EBKSGqBHwTf5Z4kUkDqkjeqK4gnL1nz1TNxMMRQl"
 
 def searchIngredient(ingredient):
-    link = "http://api.nal.usda.gov/ndb/search/?format=json&q=" + ingredient + "&sort=n&max=25&offset=0&api_key=" + key
+    word = ingredient.replace("and", "&")
+    link = "http://api.nal.usda.gov/ndb/search/?format=json&q=" + word + "&sort=n&max=25&offset=0&api_key=" + key
     u = urllib2.urlopen(link)
     D = json.loads(u.read())
     d = D['list']
@@ -26,6 +27,6 @@ def getNutrition(idN):
         nutrition[nutrient['nutrient']] = value
     return nutrition
 
-#print(searchIngredient("carrot"))
+print(searchIngredient("potato and pumpkin"))
 
 #print(getNutrition("01009"))
