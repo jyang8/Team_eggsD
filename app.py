@@ -1,5 +1,5 @@
 from flask import Flask, render_template, session, redirect, url_for, request
-import nutrition
+import utils
 #import flask
 #import sqlite3
 #import hashlib
@@ -21,8 +21,8 @@ def new():
 
 @app.route("/list/", methods = ["GET"])
 def list():
-    if ('ingredient' in request.args())
-        list = searchIngredient(request.args['ingredient']);
+    if ('ingredient' in request.args()):
+        list = nutrition.searchIngredient(request.args['ingredient']);
     return render_template('list.html', list = list)
 
 """
