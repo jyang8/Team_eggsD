@@ -1,8 +1,6 @@
 import urllib2, json
 
-yid = "e3b721c8"
 
-key = "3ee65fd50967cc9a8c8819d32fd8b1f9"
 
 def getRecipe(ingredients, dish):
     dish = dish.replace(" ", "+")

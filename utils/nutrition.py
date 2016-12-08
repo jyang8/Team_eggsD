@@ -1,6 +1,5 @@
 import urllib2, json
 
-key = "EBKSGqBHwTf5Z4kUkDqkjeqK4gnL1nz1TNxMMRQl"
 
 def searchIngredient(ingredient):
     word = ingredient.replace("and", "&")
