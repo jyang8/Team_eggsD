@@ -43,7 +43,11 @@ richardW -- 2016-12-06 23:59
 - added and wrote basic structure of list.html
 
 issacK -- 2016-12-07 00:20
-- found issue pushing from school, redid prior work and finished getNutrition 
+- found issue pushing from school, restarted and finished classwork (searchIngredient and getNutrition) 
+
+issacK -- 2016-12-07 14:33
+- fix issues with searchIngredient, doesn't break when no search results and searching with 'and'
+- start work getRecipe (didn't get to code, only read documentation for yummly)
 
 jessicaY -- 2016-12-07 20:35
 - started working on accounts/database stuff (optional)
