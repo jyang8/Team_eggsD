@@ -23,10 +23,16 @@ def new():
 def list():
     for key in request.args:
         print key
+
+    if 'image' in request.args:
+        print "Works"
+        return
     if 'ingredient' in request.args:
         list = nutrition.searchIngredient(request.args['ingredient']);
         return render_template('list.html', list = list)
     return redirect(url_for("new"))
+
+@app.route
 
 """
 @app.route("/login/", methods = ['POST', 'GET'])
