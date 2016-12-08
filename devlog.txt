@@ -49,6 +49,9 @@ issacK -- 2016-12-07 14:33
 - fix issues with searchIngredient, doesn't break when no search results and searching with 'and'
 - start work getRecipe (didn't get to code, only read documentation for yummly)
 
+richardW -- 2016-12-07 14:35
+- housekeeping stuff: rerouted css file, made utils into a module
+
 jessicaY -- 2016-12-07 20:35
 - started working on accounts/database stuff (optional)
 
@@ -60,3 +63,6 @@ issacK -- 2016-12-07 22:38
 - continued working on providing information more nicely
 - issue with unicode
 
+richardW -- 2016-12-08 3:37
+- created a testing template for info
+- reformated list.html
