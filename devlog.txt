@@ -44,3 +44,7 @@ richardW -- 2016-12-06 23:59
 
 issacK -- 2016-12-07 00:20
 - found issue pushing from school, redid prior work and finished getNutrition 
+
+jessicaY -- 2016-12-07 20:35
+- started working on accounts/database stuff (optional)
+
