@@ -187,6 +187,7 @@ td,
 th {
   padding: 0;
 }
+body{padding-top:70px;}
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,
@@ -6754,4 +6755,6 @@ button.close {
     display: none !important;
   }
 }
+
+body{padding-top:70px;}
 /*# sourceMappingURL=bootstrap.css.map */
