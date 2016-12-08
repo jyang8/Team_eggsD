@@ -1,8 +1,8 @@
 import urllib2, json
 
-yid = ""
+yid = "e3b721c8"
 
-key = ""
+key = "3ee65fd50967cc9a8c8819d32fd8b1f9"
 
 def getRecipe(ingredients, dish):
     dish = dish.replace(" ", "+")
@@ -22,5 +22,28 @@ def getRecipe(ingredients, dish):
     else:
         return "no matches"
 
-getRecipe(["hi  ", "two", "idjoa"], "this andosin asddhoia")
+def info(recipe, info):
+    ingredients = ""
+    for ingredient in info[1]:
+        ingredients += ingredient + ", "
+    ingredients = ingredients.rstrip(", ")
+    time = info[2]
+    hour = time % 3600
+    time -= hour * 3600
+    minutes = time % 60
+    time -= minutes * 60
+    hour = str(hour)
+    minutes = str(minutes)
+    seconds = str(time)
+    infoString = "Recipe for " + recipe + " by " + info[0] + ".\nInclude Ingredients:" + ingredients + "\nThis recipe takes " + hour + "hr " + minutes + "min " + seconds + "seconds"
+    infoString.replace("\u0300", "")
+    return infoString
+
+def massInfo(recipes):
+    information = ""
+    for key in recipes.keys():
+        information += info(key, recipes[key]) + "\n\n"
+    return information
+    
+print(massInfo(getRecipe(["cognac", "garlic"], "onion soup")))
 
