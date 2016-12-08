@@ -4,6 +4,7 @@ import urllib2, json
 def searchIngredient(ingredient):
     word = ingredient.replace("and", "&")
     word = word.replace(" ", "+")
+    key = "EBKSGqBHwTf5Z4kUkDqkjeqK4gnL1nz1TNxMMRQl"
     link = "http://api.nal.usda.gov/ndb/search/?format=json&q=" + word + "&sort=n&max=25&offset=0&api_key=" + key
     u = urllib2.urlopen(link)
     D = json.loads(u.read())

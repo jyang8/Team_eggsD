@@ -16,7 +16,7 @@
 
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
-	Food for Thought
+	<a class="navbar-brand" href="#">Food for Thought</a>
       </div>
     </nav>
 
@@ -26,18 +26,18 @@
 	
 	<div class="form-group">
 	  <label for="ingredient" name="ingredient">Text Search</label>
-	  <input name = "ingredient" type="text" class="form-control" id="ingredient" placeholder="Carrot">
+	  <input name="ingredient" type="text" class="form-control" placeholder="Carrot">
 	</div>
 
 	<button type="submit" class="btn btn-default">Search</button>
 
       </form>
       
-      <form>
+      <form action="/list/" method = "GET">
 
 	<div class="form-group">
-	  <label for="imgsearch">Image Search</label>
-	  <input type="url" class="form-control" id="imgsearch">
+	  <label for="image" name="image">Image Search</label>
+	  <input name="image" type="url" class="form-control">
 	</div>
 
 	<button type="submit" class="btn btn-default">Search</button>

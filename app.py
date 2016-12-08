@@ -32,7 +32,7 @@ def list():
         return render_template('list.html', list = list)
     return redirect(url_for("new"))
 
-@app.route
+
 
 """
 @app.route("/login/", methods = ['POST', 'GET'])
