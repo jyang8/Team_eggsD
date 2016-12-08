@@ -52,3 +52,11 @@ issacK -- 2016-12-07 14:33
 jessicaY -- 2016-12-07 20:35
 - started working on accounts/database stuff (optional)
 
+issacK -- 2016-12-07 22:17
+- finish getRecipe, returns information using Yummly Api
+- returned information is ok, but not easy to read. 
+
+issacK -- 2016-12-07 22:38
+- continued working on providing information more nicely
+- issue with unicode
+
