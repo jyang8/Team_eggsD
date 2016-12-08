@@ -6,7 +6,7 @@ def getIngredient(url):
     # entire url = head + url + end + token
     head = "https://api.clarifai.com/v1/tag?url=" 
     end = "&access_token="
-    token = "8x4MflLoJTmzWWa7VQqrQuQkW9jJsU"
+    token = "" # insert API key here
     newURL = head + url + end + token
     # returns the contents of the target webpage
     page = urllib2.urlopen(newURL).read()

@@ -57,3 +57,44 @@ def getUID(user):
             id = record[2]
     db.close()
     return id
+
+# returns a user's hashed password
+def getPass(userID):
+    db = sqlite3.connect("data/database.db")
+    c = db.cursor()
+    cmd = "SELECT hashedPass FROM accounts WHERE userID = %d;"%(userID)
+    sel = c.execute(cmd)
+    for record in sel:
+        db.close()
+        return record[0]
+
+# changes a user's hashed password
+def changePass(newHashedPass, userID):
+    db = sqlite3.connect("data/database.db")
+    c = db.cursor()
+    cmd = "UPDATE accounts SET hashedPass = '%s'WHERE userID = %d;"(newHashedPass, userID)
+    sel = c.execute()
+    db.commit()
+    db.close()
+
+# returns the list of ingredients saved by a user
+def getIList(userID):
+    db = sqlite3.connect("data/database.db")
+    c = db.cursor()
+    cmd = "SELECT iList FROM accounts WHERE userID = %d;"%(userID)
+    sel = c.execute(cmd)
+    for record in sel:
+        db.close()
+        return record[0]
+
+# adds an ingredient to the list of ingredients saved by a user
+# delimiter for iList is a semicolon
+# iList is ordered from oldest entry to newest entry
+def addIngredient(i, userID):
+    db = sqlite3.connect("data/database.db")
+    c = db.cursor()
+    tmp = getIList(userID) + i + ";"
+    cmd = "UPDATE accounts SET iList = '%s' WHERE userID = %d;"(tmp, userID)
+    sel = c.execute()
+    db.commit()
+    db.close()
