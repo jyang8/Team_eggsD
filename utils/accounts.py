@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3, hashlib
 
 # if username given matches a username in the database, return true
 # else, return false
@@ -58,22 +58,24 @@ def getUID(user):
     db.close()
     return id
 
+# returns a hashed version of the password
+def hashPass(password):
+    return hashlib.sha224(password).hexdigest()
+    
 # returns a user's hashed password
 def getPass(userID):
     db = sqlite3.connect("data/database.db")
     c = db.cursor()
     cmd = "SELECT hashedPass FROM accounts WHERE userID = %d;"%(userID)
-    sel = c.execute(cmd)
-    for record in sel:
-        db.close()
-        return record[0]
+    sel = c.execute(cmd).fetchone()
+    return sel[0]
 
 # changes a user's hashed password
 def changePass(newHashedPass, userID):
     db = sqlite3.connect("data/database.db")
     c = db.cursor()
-    cmd = "UPDATE accounts SET hashedPass = '%s'WHERE userID = %d;"(newHashedPass, userID)
-    sel = c.execute()
+    cmd = "UPDATE accounts SET hashedPass = '%s' WHERE userID = %d;"%(newHashedPass, int(userID))
+    sel = c.execute(cmd)
     db.commit()
     db.close()
 
@@ -81,11 +83,9 @@ def changePass(newHashedPass, userID):
 def getIList(userID):
     db = sqlite3.connect("data/database.db")
     c = db.cursor()
-    cmd = "SELECT iList FROM accounts WHERE userID = %d;"%(userID)
-    sel = c.execute(cmd)
-    for record in sel:
-        db.close()
-        return record[0]
+    cmd = "SELECT iList FROM accounts WHERE userID = %d;"%(int(userID))
+    sel = c.execute(cmd).fetchone()
+    return sel[0]
 
 # adds an ingredient to the list of ingredients saved by a user
 # delimiter for iList is a semicolon
@@ -94,7 +94,9 @@ def addIngredient(i, userID):
     db = sqlite3.connect("data/database.db")
     c = db.cursor()
     tmp = getIList(userID) + i + ";"
-    cmd = "UPDATE accounts SET iList = '%s' WHERE userID = %d;"(tmp, userID)
-    sel = c.execute()
+    cmd = "UPDATE accounts SET iList = '%s' WHERE userID = %d;"%(tmp, int(userID))
+    sel = c.execute(cmd)
     db.commit()
     db.close()
+
+    

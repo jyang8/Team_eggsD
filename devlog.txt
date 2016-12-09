@@ -76,3 +76,6 @@ jessicaY -- 2016-12-08 14:43
 
 jessicaY -- 2016-12-09 11:20
 - added code for creating the database/table
+
+jessicaY -- 2016-12-09 15:47
+- fixed some database functions
