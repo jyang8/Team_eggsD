@@ -73,3 +73,6 @@ richardW -- 2016-12-08 13:15
 jessicaY -- 2016-12-08 14:43
 - removed API key from image.py
 - added some database functions dealing with saved ingredients list
+
+jessicaY -- 2016-12-09 11:20
+- added code for creating the database/table
