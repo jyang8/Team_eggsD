@@ -1,8 +1,6 @@
 import urllib2, json
 
-yid = 'e3b721c8'
 
-key = '3ee65fd50967cc9a8c8819d32fd8b1f9'
 
 #Returns a list of possible recipes given a set of ingredients and the dish you want to make
 def searchRecipes(ingredients, dish):
