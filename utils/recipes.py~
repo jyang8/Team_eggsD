@@ -2,7 +2,7 @@ import urllib2, json
 
 
 
-def searchRecipe(ingredients, dish):
+def getRecipe(ingredients, dish):
     dish = dish.replace(" ", "+")
     ingString = ""
     for index, ingredient in enumerate(ingredients):
@@ -14,12 +14,12 @@ def searchRecipe(ingredients, dish):
     if 'matches' in D:
         recipes = {}
         for recipe in D['matches']:
-            infoList = [recipe['sourceDisplayName'], recipe['ingredients'], recipe['totalTimeInSeconds'], recipe['smallImageUrls'], recipe['id']]
+            infoList = [recipe['sourceDisplayName'], recipe['ingredients'], recipe['totalTimeInSeconds'], recipe['smallImageUrls']]
             recipes[recipe['recipeName']] = infoList
         return recipes
     else:
         return "no matches"
-'''
+
 def info(recipe, info):
     ingredients = ""
     for ingredient in info[1]:
@@ -36,20 +36,12 @@ def info(recipe, info):
     infoString = "Recipe for " + recipe + " by " + info[0] + ".\nInclude Ingredients:" + ingredients + "\nThis recipe takes " + hour + "hr " + minutes + "min " + seconds + "seconds"
     infoString.replace("\u0300", "")
     return infoString
-#'''
 
 def massInfo(recipes):
     information = ""
     for key in recipes.keys():
         information += info(key, recipes[key]) + "\n\n"
     return information
-
-def getRecipe(idno):
-    link = "http://api.yummly.com/v1/api/recipe/" + idno "_app_id=" + yid + "&_app_key=" + key
-     u = urllib2.urlopen(link)
-     D = json.loads(u.read())
-     info = D['source']
-     return info
     
-#print(massInfo(getRecipe(["cognac", "garlic"], "onion soup")))
+print(massInfo(getRecipe(["cognac", "garlic"], "onion soup")))
 
