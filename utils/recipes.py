@@ -1,8 +1,11 @@
 import urllib2, json
 
+yid = 'e3b721c8'
 
+key = '3ee65fd50967cc9a8c8819d32fd8b1f9'
 
-def searchRecipe(ingredients, dish):
+#Returns a list of possible recipes given a set of ingredients and the dish you want to make
+def searchRecipes(ingredients, dish):
     dish = dish.replace(" ", "+")
     ingString = ""
     for index, ingredient in enumerate(ingredients):
@@ -19,37 +22,14 @@ def searchRecipe(ingredients, dish):
         return recipes
     else:
         return "no matches"
-'''
-def info(recipe, info):
-    ingredients = ""
-    for ingredient in info[1]:
-        ingredients += ingredient + ", "
-    ingredients = ingredients.rstrip(", ")
-    time = info[2]
-    hour = time % 3600
-    time -= hour * 3600
-    minutes = time % 60
-    time -= minutes * 60
-    hour = str(hour)
-    minutes = str(minutes)
-    seconds = str(time)
-    infoString = "Recipe for " + recipe + " by " + info[0] + ".\nInclude Ingredients:" + ingredients + "\nThis recipe takes " + hour + "hr " + minutes + "min " + seconds + "seconds"
-    infoString.replace("\u0300", "")
-    return infoString
-#'''
 
-def massInfo(recipes):
-    information = ""
-    for key in recipes.keys():
-        information += info(key, recipes[key]) + "\n\n"
-    return information
-
+#returns extra information regarding a specific recipe given the id of the recipe, id can be found by searchRecipes
 def getRecipe(idno):
-    link = "http://api.yummly.com/v1/api/recipe/" + idno "_app_id=" + yid + "&_app_key=" + key
-     u = urllib2.urlopen(link)
-     D = json.loads(u.read())
-     info = D['source']
-     return info
+    link = "http://api.yummly.com/v1/api/recipe/" + idno + "?_app_id=" + yid + "&_app_key=" + key
+    u = urllib2.urlopen(link)
+    D = json.loads(u.read())
+    info = D['source']
+    return info
     
 #print(massInfo(getRecipe(["cognac", "garlic"], "onion soup")))
-
+print(getRecipe('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364'))
