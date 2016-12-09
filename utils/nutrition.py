@@ -31,6 +31,6 @@ def getNutrition(idN):
         nutrition[nutrient['nutrient']] = value
     return nutrition
 
-print(searchIngredient("potdas"))
+#print(searchIngredient("potdas"))
 
 #print(getNutrition("01009"))
