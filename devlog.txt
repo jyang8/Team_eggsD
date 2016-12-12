@@ -79,3 +79,6 @@ jessicaY -- 2016-12-09 11:20
 
 jessicaY -- 2016-12-09 15:47
 - fixed some database functions
+
+issacK -- 2016-12-11 23:46
+- make api.py to handle api keys from inputted file
