@@ -2,7 +2,7 @@ import urllib2, json, api
 
 key = api.getKeys('keys.txt')['usda']
 
-
+#provides a list of food item related to the search term
 def searchIngredient(ingredient):
     word = ingredient.replace("and", "&")
     word = word.replace(" ", "+")
@@ -21,6 +21,7 @@ def searchIngredient(ingredient):
     else:
         return "Search Not Found!"
 
+#returns nutrition facts, idN is found through searchIngredients
 def getNutrition(idN):
     link = "http://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=" + key + "&nutrients=205&nutrients=204&nutrients=208&nutrients=269&ndbno=" + idN
     u = urllib2.urlopen(link)
@@ -32,6 +33,6 @@ def getNutrition(idN):
         nutrition[nutrient['nutrient']] = value
     return nutrition
 
-print(searchIngredient("potato"))
+#print(searchIngredient("potato"))
 
 #print(getNutrition("01009"))
