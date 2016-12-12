@@ -1,6 +1,6 @@
-import urllib2, json
+import urllib2, json, api
 
-
+key = api.getKeys('keys.txt')['usda']
 
 
 def searchIngredient(ingredient):

@@ -9,4 +9,4 @@ def getKeys(f):
     keys.pop('apiName', None)
     return keys
 
-print(getKeys('keys.txt'))
+#print(getKeys('keys.txt'))
