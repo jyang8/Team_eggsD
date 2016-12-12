@@ -27,7 +27,9 @@
     
     <tr>
       <td>
-	<button type="submit" id="buttonlink" name="selection">{{i}}</button>
+	<form action="/info/">
+	  <button type="submit" id="buttonlink" name="selection">{{i}}</button>
+	</form>
       </td>
     </tr>
     <!-- replace href with something (This might have to be passed from app.py) -->
