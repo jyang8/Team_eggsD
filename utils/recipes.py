@@ -29,7 +29,11 @@ def getRecipe(idno):
     u = urllib2.urlopen(link)
     D = json.loads(u.read())
     info = D['source']
+    info['yield'] = D['yield']
+    info['name'] = D['name']
+    info['totalTime'] = D['name']
+    info['image'] = D['images'][0]['hostedMediumUrl']
     return info
     
-#print(getRecipe('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364'))
-print(searchRecipes(['potato'], 'fries'))
+print(getRecipe('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364'))
+#print(searchRecipes(['potato'], 'fries'))

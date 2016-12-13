@@ -32,4 +32,4 @@ def getRecipe(idno):
     return info
     
 #print(getRecipe('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364'))
-print(searchRecipes(['potato'], 'fries')
+print(searchRecipes(['potato'], 'fries'))
