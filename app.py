@@ -1,11 +1,13 @@
 from flask import Flask, render_template, session, redirect, url_for, request
-from utils import nutrition
+from utils import nutrition, info, recipes, image, api, initTable
 #import flask
 #import sqlite3
 #import hashlib
 
 
 app = Flask(__name__)
+ingredient = ""
+
 
 """
 app.secret_key
@@ -21,8 +23,10 @@ def new():
 
 @app.route("/list/", methods = ["GET"])
 def list():
-
+    global ingredient
     if 'ingredient' in request.args:
+        ingredient = request.args['ingredient']
+        #print ingredient
         list = nutrition.searchIngredient(request.args['ingredient'])
         return render_template('list.html', list = list)
     return redirect(url_for("new"))
@@ -30,7 +34,17 @@ def list():
 
 @app.route("/info/", methods = ["GET"])
 def info():
-    return
+    global ingredient
+    if 'selection' in request.args:
+       	print ingredient 
+        wikiInfo = info.findArticle(ingredient)
+        for item in wikiInfo:
+            print item	
+        #return wiki
+        #return recipes
+        #return nutrition
+        #return 
+    return redirect(url_for("new"))
 
 
 """
@@ -50,3 +64,4 @@ def logout():
 if __name__ == "__main__":
     app.debug = True
     app.run()
+
