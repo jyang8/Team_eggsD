@@ -27,7 +27,7 @@ def list():
     if 'ingredient' in request.args:
         ingredient = request.args['ingredient']
         #print ingredient
-        list = nutrition.searchIngredient(request.args['ingredient'])
+        list = nutrition.searchIngredient(ingredient)
         return render_template('list.html', list = list)
     return redirect(url_for("new"))
 
@@ -36,14 +36,28 @@ def list():
 def info():
     global ingredient
     if 'selection' in request.args:
-       	print ingredient 
+       	#print ingredient
+        
+        #print wikistuff
+        '''
         wikiInfo = info.findArticle(ingredient)
         for item in wikiInfo:
-            print item	
-        #return wiki
-        #return recipes
-        #return nutrition
-        #return 
+            print item
+        #'''
+        
+        #print nutrition
+        '''
+        nutritionIDs = nutrition.searchIngredient(ingredient)
+        nutritions = nutrition.getNutrient(nutritionsIDs[request.args['selection']])
+        print nutritions
+        #'''
+        
+        #print recipes
+        #'''
+        
+        #'''
+        
+        return render_template('info.html')
     return redirect(url_for("new"))
 
 
