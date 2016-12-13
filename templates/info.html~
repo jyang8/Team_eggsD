@@ -21,38 +21,24 @@
       </div>
     </nav>
 
-    <h2><center>{{foodname}}</center></h2>
-
-    <ul class="nav nav-tabs nav-stacked">
-      <li role="presentation"><a href="#1"><center>Nutrition</center></a>
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#1">Nutrition</a>
       </li>
-      <li role="presentation"><a href="#2"><center>Articles</center></a>
+      <li role="presentation"><a href="#2">Articles</a>
       </li>
-      <li role="presentation"><a href="#3"><center>Images</center></a>
+      <li role="presentation"><a href="#3">Images</a>
       </li>
-      <li role="presentation"><a href="#4"><center>Recipes</center></a>
+      <li role="presentation"><a href="#4">Recipes</a>
       </li>
     </ul>
 
-
     <div id="1" role="navigation">
-      <h3>Nutrition</h3>
-      <p>{{nutrition}}</p>
+      Hi
     </div>
+
 
     <div id="2" role="navigation">
-     <h3>Articles</h3>
-     <p>{{articles}}</p>
-    </div>
-
-    <div id="3" role="navigation">
-     <h3>Images</h3>
-     <p>{{images}}</p>
-    </div>
-
-    <div id="4" role="navigation">
-     <h3>Recipes</h3>
-     <p>{{recipes}}</p>
+      Hi
     </div>
 
     
