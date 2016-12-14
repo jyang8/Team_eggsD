@@ -104,3 +104,7 @@ issacK -- 2016-12-13 20:50
 
 jessicaY -- 2016-12-13 21:08
 - added checkIngredient and rmIngredient functions in accounts.py
+
+issacK -- 2016-12-13 23:06
+- fixed issues with nutrition.py
+- changed api call for getNutrient so the nutrient list is more extensive
