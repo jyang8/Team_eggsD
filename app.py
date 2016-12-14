@@ -56,31 +56,33 @@ def list():
 
 
 @app.route("/info/", methods = ["GET"])
-def info():
+def foodinfo():
     global ingredient
     if 'selection' in request.args:
        	#print ingredient
         
         #print wikistuff
-        '''
-        wikiInfo = info.findArticle(ingredient)
-        for item in wikiInfo:
-            print item
+        #'''
+        numSects = info.numSectionS(ingredient)
+        wikiInfo = info.getArticleS(ingredient, numSects)
+
         #'''
         
         #print nutrition
-        '''
+        #'''
         nutritionIDs = nutrition.searchIngredient(ingredient)
-        nutritions = nutrition.getNutrient(nutritionsIDs[request.args['selection']])
-        print nutritions
+        #print request.args['selection']
+        nutritions = nutrition.getNutrition(nutritionIDs[request.args['selection']])
+        #print nutritions
         #'''
         
         #print recipes
         #'''
-        
+        recipeList = recipes.getRecipes(ingredient)
+         
         #'''
         
-        return render_template('info.html')
+        return render_template('info.html', articles = wikiInfo, nutrition = nutritions, recipes = recipeList)
     return redirect(url_for("new"))
 
 
