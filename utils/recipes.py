@@ -41,7 +41,7 @@ def getRecipes(ingredient):
         for recipe in D['matches']:
             time = recipe['totalTimeInSeconds']
             if time == None:
-                time = "NA"
+                time = "N/A"
             else:
                 hour = time / 3600
                 minute = (time - (hour * 3600)) / 60
