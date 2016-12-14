@@ -23,19 +23,16 @@ def searchIngredient(ingredient):
 
 #returns nutrition facts, idN is found through searchIngredients
 def getNutrition(idN):
-    link = 'http://api.nal.usda.gov/ndb/reports/?ndbno=' + idN + '&type=b&format=json&api_key=' + key
+    link = "http://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=" + key + "&nutrients=205&nutrients=204&nutrients=208&nutrients=269&ndbno=" + idN
     u = urllib2.urlopen(link)
     D = json.loads(u.read())
-    d = D['report']['food']['nutrients']
+    d = D['report']['foods'][0]['nutrients']
     nutrition = {}
     for nutrient in d:
         value = nutrient['value'] + " " + nutrient['unit']
-        nutrition[nutrient['name']] = value
+        nutrition[nutrient['nutrient']] = value
     return nutrition
-                
-#l = searchIngredient('potato')
-#s = l['Potatoes, raw'] + ""
-#print(getNutrition('11390'))
-#print(s)
 
+#print(searchIngredient("potato"))
 
+#print(getNutrition("01009"))
