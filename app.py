@@ -82,7 +82,7 @@ def foodinfo():
          
         #'''
         
-        return render_template('info.html', articles = wikiInfo, nutrition = nutritions, recipes = recipeList)
+        return render_template('info.html', foodname = ingredient, articles = wikiInfo, nutrition = nutritions, recipes = recipeList)
     return redirect(url_for("new"))
 
 
