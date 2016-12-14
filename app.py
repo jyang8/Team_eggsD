@@ -18,6 +18,38 @@ c = db.cursor()
 #"""
 
 @app.route("/", methods = ['GET'])
+def login():
+    return render_template('login.html')
+
+@app.route("/authenticate/", methods = ['POST', 'GET'])
+def authenticate(): 
+    message = ""
+    if request.method == 'POST':
+        username = request.form['user']
+        password = request.form['pass']
+        hashPass = accounts.hashPass(password)
+
+        if 'login' in request.form:
+            if accounts.verify(username, hashPass):
+                session['username'] = username
+                return redirect(url_for("new"))
+        if 'register' in request.form:
+            if not accounts.userExists(username):
+                accounts.register(user, hashPass)
+                message = "User has been successfully registered"
+            else:
+                message = "User already exists"
+
+    return redirect(url_for("login", message = message))
+
+
+@app.route("/logout/")
+def logout():
+    session.pop('username')
+    return redirect(url_for("login"))
+
+
+@app.route("/new/", methods = ['GET'])
 def new():
     return render_template('home.html')
 
@@ -60,40 +92,6 @@ def info():
         return render_template('info.html')
     return redirect(url_for("new"))
 
-
-#"""
-@app.route("/login/", methods = ['POST', 'GET'])
-def login():
-    return render_template('login.html')
-
-@app.route("/authenticate/", methods = ['POST', 'GET'])
-def authenticate(): 
-    message = ""
-    if request.method == 'POST':
-        username = request.form['user']
-        password = request.form['pass']
-        hashPass = accounts.hashPass(password)
-
-        if 'login' in request.form:
-            if accounts.verify(username, hashPass):
-                session['username'] = username
-                return redirect(url_for("new"))
-        if 'register' in request.form:
-            if !(accounts.userExists(username)):
-                accounts.register(user, hashPass)
-                message = "User has been successfully registered"
-            else:
-                message = "User already exists"
-
-    return redirect(url_for("login", message = message))
-
-
-@app.route("/logout/")
-def logout():
-    session.pop('username')
-    return redirect(url_for("new"))
-
-#"""
 
 if __name__ == "__main__":
     app.debug = True
