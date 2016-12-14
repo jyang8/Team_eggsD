@@ -40,12 +40,15 @@ def getRecipes(ingredient):
         recipes = {}
         for recipe in D['matches']:
             time = recipe['totalTimeInSeconds']
-            hour = time / 3600
-            minute = (time - (hour * 3600)) / 60
-            if hour > 0:
-                time = str(hour) + " hr " + str(minute) + " min"
+            if time == None:
+                time = "NA"
             else:
-                time = str(minute) + " min"
+                hour = time / 3600
+                minute = (time - (hour * 3600)) / 60
+                if hour > 0:
+                    time = str(hour) + " hr " + str(minute) + " min"
+                else:
+                    time = str(minute) + " min"
             infoList = [recipe['sourceDisplayName'], recipe['ingredients'], time, recipe['smallImageUrls'], recipe['recipeName']]
             recipes[recipe['id']] = infoList
         return recipes
@@ -66,4 +69,4 @@ def getRecipe(idno):
     
 #print(getRecipe('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364'))
 #print(searchRecipes(['potato'], 'fries'))
-print(getRecipes("beef"))
+#print(getRecipes("beef"))

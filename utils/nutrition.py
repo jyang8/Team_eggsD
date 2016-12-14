@@ -35,7 +35,7 @@ def getNutrition(idN):
                 
 #l = searchIngredient('potato')
 #s = l['Potatoes, raw'] + ""
-print(getNutrition(searchIngredient('potato')['Potatoes, raw']))
+#print(getNutrition(searchIngredient('potato')['Potatoes, raw']))
 #print(s)
 
 
