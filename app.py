@@ -9,20 +9,11 @@ app = Flask(__name__)
 ingredient = ""
 
 
-"""
-app.secret_key
 
-f = data/accounts.db
-db = sqlite3.connect(f)
-c = db.cursor()
-#"""
+app.secret_key = '\xd0\xd5Z\x10p\x80\xefK`\x82\x9f@\xd7"\xc2M@;\xf0\xea\xe8\xce|a\xa2\xc5\x8d\x90\x1d#\xbcZ'
 
-@app.route("/", methods = ['GET'])
-def login():
-    return render_template('login.html')
-
-@app.route("/authenticate/", methods = ['POST', 'GET'])
-def authenticate(): 
+@app.route("/", methods = ['GET', 'POST'])
+def login(): 
     message = ""
     if request.method == 'POST':
         username = request.form['user']
@@ -35,12 +26,12 @@ def authenticate():
                 return redirect(url_for("new"))
         if 'register' in request.form:
             if not accounts.userExists(username):
-                accounts.register(user, hashPass)
+                accounts.register(username, hashPass)
                 message = "User has been successfully registered"
             else:
                 message = "User already exists"
 
-    return redirect(url_for("login", message = message))
+    return render_template("login.html", message = message)
 
 
 @app.route("/logout/")
