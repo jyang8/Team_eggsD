@@ -108,3 +108,7 @@ jessicaY -- 2016-12-13 21:08
 issacK -- 2016-12-13 23:06
 - fixed issues with nutrition.py
 - changed api call for getNutrient so the nutrient list is more extensive
+
+richardW -- 2016-12-14 2:32
+- integrated nutrition and recipes to template
+- added logout button
