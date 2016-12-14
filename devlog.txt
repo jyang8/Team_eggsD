@@ -98,5 +98,9 @@ jessicaY -- 2016-12-13 20:13
 - fixed api key in image.py
 - added functions for simple wikipedia (previously only had for en wikipedia)
 
+issacK -- 2016-12-13 20:50
+- added getRecipes, different from searchRecipes (only uses ingredient vs ingredient and dish)
+- edited time value in both getRecipes and searchRecipes from time(seconds) to hr and min format
+
 jessicaY -- 2016-12-13 21:08
 - added checkIngredient and rmIngredient functions in accounts.py
