@@ -17,51 +17,37 @@
     <div class="container">
       <h3>Login</h3>
 
-      <form action="/list/" method = "POST">
+      <form action="/" method = "POST">
 
         <div class="form-group">
-          <label for="ingredient" name="username">Username</label>
-          <input name="username" type="text" class="form-control" placeholder="User">
+          <label for="user" name="user">Username</label>
+          <input name="user" type="text" class="form-control" placeholder="User">
+
+          <label for="pass" name="pass">Password</label>
+          <input name="pass" type="pass" class="form-control">
         </div>
 
-        <div class="form-group">
-          <label for="ingredient" name="password">Password</label>
-          <input name="password" type="password" class="form-control">
-        </div>
-
-        <button type="submit" class="btn btn-default">Login</button>
+        <button type="submit" name="login" class="btn btn-default">Login</button>
 
       </form>
     
 
       <h3>Register</h3>
 
-      <form action="/list/" method = "POST">
+      <form action="/authenticate/" method = "POST">
 
         <div class="form-group">
-          <label for="ingredient" name="username">Username</label>
-          <input name="username" type="text" class="form-control" placeholder="User">
+          <label for="user" name="user">Username</label>
+          <input name="user" type="text" class="form-control" placeholder="User">
+
+          <label for="pass" name="pass">Password</label>
+          <input name="pass" type="pass" class="form-control">
         </div>
 
-        <div class="form-group">
-          <label for="ingredient" name="password">Password</label>
-          <input name="password" type="password" class="form-control">
-        </div>
-
-        <div class="form-group">
-          <label for="ingredient" name="password2">Password</label>
-          <input name="password2" type="password" class="form-control">
-        </div>
-
-        <button type="submit" class="btn btn-default">Search</button>
+        <button type="submit" name="register" class="btn btn-default">Register</button>
 
       </form>
 
-      <form action="/home/" method = "POST">
-	
-	<button type="submit" class="btn btn-default">Go to Search</button>
-	
-      </form>
 
   </body>
   
