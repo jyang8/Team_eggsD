@@ -108,7 +108,8 @@ def getImageURL(img):
 #print getPageID(findArticle("potato"))
 #print getArticle(findArticle("potato"))
 #print splitArticle(getArticle(findArticle("potato")))
-#print splitArticle(getArticle(findArticle("potato")))[0]
+#print "\n\n\n\n\n"
+print splitArticle(getArticle(findArticle("potato")))[0]
 #print getSection("potato")
 #print getArticleBySection("potato", numSection("potato"))
 #print getImage(findArticle("potato"))

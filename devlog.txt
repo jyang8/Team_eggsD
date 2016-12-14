@@ -115,3 +115,6 @@ richardW -- 2016-12-14 2:32
 
 jessicaY -- 2016-12-14 10:05
 - added splitArticle for en wikipedia articles
+
+jessicaY -- 2016-12-14 16:35
+- changed output of getIngredient to a dictionary with probability
