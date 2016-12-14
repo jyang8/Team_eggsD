@@ -38,6 +38,12 @@ def getPageID(article):
 def getArticle(article):
     return article["query"]["pages"][getPageID(article)]["extract"]
 
+# takes the article as a string and splits it into a list of sections
+# returns the list of sections
+def splitArticle(article):
+    secList = article.split("\n\n\n")
+    return secList
+    
 # https://en.wikipedia.org/w/api.php?format=json&action=parse&prop=sections&page=potato&redirects
 
 # returns a list of the section titles of the article
@@ -101,6 +107,8 @@ def getImageURL(img):
 #print findArticle("potato")
 #print getPageID(findArticle("potato"))
 #print getArticle(findArticle("potato"))
+#print splitArticle(getArticle(findArticle("potato")))
+#print splitArticle(getArticle(findArticle("potato")))[0]
 #print getSection("potato")
 #print getArticleBySection("potato", numSection("potato"))
 #print getImage(findArticle("potato"))
@@ -167,9 +175,8 @@ def getImageURLS(img):
     d = json.loads(page)
     return d["query"]["pages"]["-1"]["imageinfo"][0]["url"]
 
-
-#print getSectionS("potato")
-#print numSectionS("potato")
+#print getSectionS("beef")
+#print numSectionS("beef")
 #print getArticleS("potato", numSectionS("potato"))
-#print getImageS("potato")
-#print getImageURLS(getImageS("potato")[0])
+#print getImageS("beef")
+#print getImageURLS(getImageS("beef")[0])

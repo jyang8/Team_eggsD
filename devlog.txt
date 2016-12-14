@@ -104,3 +104,6 @@ issacK -- 2016-12-13 20:50
 
 jessicaY -- 2016-12-13 21:08
 - added checkIngredient and rmIngredient functions in accounts.py
+
+jessicaY -- 2016-12-14 10:01
+- added splitArticle for en wikipedia articles
