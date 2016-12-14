@@ -20,14 +20,14 @@
       
       <h3>Login</h3>
 
-      <form action="/" method = "POST">
+      <form action="/login/" method = "POST">
 
         <div class="form-group">
           <label for="user" name="user">Username</label>
           <input name="user" type="text" class="form-control" placeholder="User">
 
           <label for="pass" name="pass">Password</label>
-          <input name="pass" type="pass" class="form-control">
+          <input name="pass" type="password" class="form-control">
         </div>
 
         <button type="submit" name="login" class="btn btn-default">Login</button>
