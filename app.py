@@ -59,13 +59,13 @@ def list():
 def foodinfo():
     global ingredient
     if 'selection' in request.args:
-       	#print ingredient
+       	print ingredient
         
         #print wikistuff
         #'''
         numSects = info.numSectionS(ingredient)
         wikiInfo = info.getArticleS(ingredient, numSects)
-
+        #print wikiInfo
         #'''
         
         #print nutrition
