@@ -54,6 +54,14 @@ def list():
         return render_template('list.html', list = list)
     return redirect(url_for("new"))
 
+@app.route("/image/", methods = ['GET'])
+def imageSearch():
+    if 'image' in request.args:
+        link = request.args['image']
+        potential = image.getIngredient(link)
+        return render_template("imglist.html", list = potential)
+    return redirect(url_for("new"))
+
 
 @app.route("/info/", methods = ["GET"])
 def foodinfo():
