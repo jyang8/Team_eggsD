@@ -96,4 +96,7 @@ issacK -- 2016-12-12 23:50
 jessicaY -- 2016-12-13 20:13
 - added functions to get a list of articles instead of one big string
 - fixed api key in image.py
-- added functions for simple wikipedia (previously only had en wikipedia)
+- added functions for simple wikipedia (previously only had for en wikipedia)
+
+jessicaY -- 2016-12-13 21:08
+- added checkIngredient and rmIngredient functions in accounts.py

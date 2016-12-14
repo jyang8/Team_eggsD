@@ -99,4 +99,26 @@ def addIngredient(i, userID):
     db.commit()
     db.close()
 
-    
+# if given ingredient is in the user's list, return true
+# else, return false
+def checkIngredient(i, userID):
+    iList = getIList(userID)
+    iList = iList[:len(iList)-1].split(";")
+    for item in iList:
+        if i == item:
+            return True
+    return False
+
+def rmIngredient(i, userID):
+    iList = getIList(userID)
+    iList = iList[:len(iList)-1].split(";")
+    newList = ""
+    for item in iList:
+        if i != item:
+            newList += item + ";"
+    db = sqlite3.connect("data/database.db")
+    c = db.cursor()
+    cmd = "UPDATE accounts SET iList = '%s' WHERE userID = %d;"%(newList, int(userID))
+    sel = c.execute(cmd)
+    db.commit()
+    db.close()
