@@ -13,13 +13,6 @@
   </head>
 
   <body>
-
-
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Food for Thought</a>
-      </div>
-    </nav>
     
     <div class="container">
 
