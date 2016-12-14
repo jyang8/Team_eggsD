@@ -8,8 +8,10 @@
      Search                                                                                                                                                                          
     </title>
     
-    <link href="../static/js/bootstrap.min.js" rel="javascript">
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+<!--    <script src="../static/js/boostrap.min.js"></script> -->
+<!--    <script src="../static/js/tab.js"></script>-->
+    <!--js only used for navbar -->
 
   </head>
 
@@ -18,28 +20,47 @@
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
 	<a class="navbar-brand" href="#">Food for Thought</a>
+	<form action="/logout/" class="form-inline float-xs-right"><button type="submit" class="btn btn-default navbar-btn navbar-right">Logout</button></form>
       </div>
     </nav>
 
-    <h2><center>{{foodname}}</center></h2>
-
-    <ul class="nav nav-tabs nav-stacked">
-      <li role="presentation"><a href="#1"><center>Nutrition</center></a>
-      </li>
-      <li role="presentation"><a href="#2"><center>Articles</center></a>
-      </li>
-      <li role="presentation"><a href="#3"><center>Images</center></a>
-      </li>
-      <li role="presentation"><a href="#4"><center>Recipes</center></a>
-      </li>
-    </ul>
+    <h2 class="text-capitalize"><center>{{foodname}}</center></h2>
 
 
+
+  <body data-spy="scroll" data-target="#navbar-example">
+    <div class="container">
+      <div id="navbar-example">
+	<ul class="nav nav-tabs" role="tablist">
+	  
+	  <li role="presentation"><a href="#1"><center>Nutrition</center></a>
+	  </li>
+	  <li role="presentation"><a href="#2"><center>Articles</center></a>
+	  </li>
+	  <li role="presentation"><a href="#3"><center>Images</center></a>
+	  </li>
+	  <li role="presentation"><a href="#4"><center>Recipes</center></a>
+	  </li>
+	</ul>
+	
+      </div>
+    </div>
+    
+    <div class="container">
     <div id="1" role="navigation">
       <h3>Nutrition</h3>
-      <p>{{nutrition}}</p>
+	{% for i in nutrition %}
+	<div class="row">
+	  <div class="col-sm-6">
+	    {{i}}
+	  </div>
+	  <div class="col-sm-6">
+	    {{nutrition.get(i)}}
+	  </div>
+	</div>
+	{% endfor %}
     </div>
-
+    
     <div id="2" role="navigation">
      <h3>Articles</h3>
      <p>{{articles}}</p>
@@ -51,11 +72,32 @@
     </div>
 
     <div id="4" role="navigation">
-     <h3>Recipes</h3>
-     <p>{{recipes}}</p>
-    </div>
+      <h3>Recipes</h3>
+      {% for i in recipes %}
+	<div class="row">
+	  <div class="col-sm-6">
+	    {{recipes.get(i)[4]}}
+	    <img src=recipes.get(i)[3]>
+	  </div>
+	  <div class="col-sm-6">
+	    Ingredients:
+	    <br>
+	    <ul>
+	    {% for q in recipes.get(i)[1] %}
+	    <li>{{q}}</li>
+	    {% endfor %}
+	    </ul>
+	    <br>
+	    Time:
+	    {{recipes.get(i)[2]}}
+	  </div>
+	</div>
+	<br>
+	{% endfor %}
 
+    </div>
     
+    </div>
     
   </body>
 
