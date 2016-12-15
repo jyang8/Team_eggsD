@@ -4,8 +4,8 @@
 
   <head>
 
-    <title>                                                                                                                                                                         
-     Search                                                                                                                                                                          
+    <title class="text-capitalize">                                                                                                                                                                         
+     {{foodname}}                                                                                                                                                                          
     </title>
     
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
@@ -71,19 +71,18 @@
      <p>{{i}}</p>
      {% endfor %}
     </div>
-
+<!--
     <div id="3" role="navigation">
      <h3>Images</h3>
      <p>{{images}}</p>
     </div>
-
+-->
     <div id="4" role="navigation">
       <h3>Recipes</h3>
       {% for i in recipes %}
 	<div class="row">
 	  <div class="col-sm-6">
 	    {{recipes.get(i)[4]}}
-	    <img src=recipes.get(i)[3]>
 	  </div>
 	  <div class="col-sm-6">
 	    Ingredients:
