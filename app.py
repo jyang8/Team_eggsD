@@ -77,6 +77,7 @@ def foodinfo():
         wikiInfo = info.getArticleBySection(ingredient, numSects)
         sects = wikiInfo[0]
         text = wikiInfo[1]
+        articleImages = info.getImage(info.findArticle(ingredient))
         #print wikiInfo
         #'''
         
@@ -94,7 +95,7 @@ def foodinfo():
          
         #'''
         
-        return render_template('info.html', foodname = ingredient, numSects = numSects, sections = sects, articles = text,listInfo = listInfo, nutrition = nutritions, recipes = recipeList)
+        return render_template('info.html', foodname = ingredient, numSects = numSects, sections = sects, articles = text,listInfo = listInfo, images = articleImages, nutrition = nutritions, recipes = recipeList)
     return redirect(url_for("new"))
 
 
