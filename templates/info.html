@@ -71,12 +71,16 @@
      <p>{{i}}</p>
      {% endfor %}
     </div>
-<!--
+
     <div id="3" role="navigation">
      <h3>Images</h3>
-     <p>{{images}}</p>
+     <p>{% for img in images %}
+       <img src="{{img}}" alt="food pic" style="width:300px;height:300px;">
+       <br>
+       {% endfor %}
+     </p>
     </div>
--->
+
     <div id="4" role="navigation">
       <h3>Recipes</h3>
       {% for i in recipes %}

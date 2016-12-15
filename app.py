@@ -77,7 +77,7 @@ def foodinfo():
         wikiInfo = info.getArticleBySection(ingredient, numSects)
         sects = wikiInfo[0]
         text = wikiInfo[1]
-        articleImages = info.getImage(info.findArticle(ingredient))
+        articleImages = info.getAllImages(ingredient)
         #print wikiInfo
         #'''
         

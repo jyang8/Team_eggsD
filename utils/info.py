@@ -104,16 +104,27 @@ def getImageURL(img):
     d = json.loads(page)
     return d["query"]["pages"]["-1"]["imageinfo"][0]["url"]
 
+def getAllImages(item):
+    imgList = getImage(findArticle(item))
+    allList = []
+    for img in imgList:
+        try: 
+            allList.append(getImageURL(img["title"]))
+        except Exception:
+            pass
+    return allList
+
 #print findArticle("potato")
 #print getPageID(findArticle("potato"))
 #print getArticle(findArticle("potato"))
 #print splitArticle(getArticle(findArticle("potato")))
 #print "\n\n\n\n\n"
-print splitArticle(getArticle(findArticle("potato")))[0]
+#print splitArticle(getArticle(findArticle("potato")))[0]
 #print getSection("potato")
 #print getArticleBySection("potato", numSection("potato"))
 #print getImage(findArticle("potato"))
 #print getImageURL(getImage(findArticle("potato"))[1]["title"])
+print getAllImages("potato")
 
 # --------------------------------------------------------------------------------------------------------------------------
 
@@ -175,6 +186,7 @@ def getImageURLS(img):
     page = urllib2.urlopen(newURL).read()
     d = json.loads(page)
     return d["query"]["pages"]["-1"]["imageinfo"][0]["url"]
+
 
 #print getSectionS("beef")
 #print numSectionS("beef")

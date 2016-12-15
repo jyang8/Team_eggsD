@@ -67,7 +67,7 @@ issacK -- 2016-12-07 22:38
 - continued working on providing information more nicely
 - issue with unicode
 
-richardW -- 2016-12-08 3:37
+richardW -- 2016-12-08 03:37
 - created a testing template for info
 - reformated list.html
 
@@ -130,7 +130,10 @@ jessicaY -- 2016-12-14 10:05
 jessicaY -- 2016-12-14 16:35
 - changed output of getIngredient to a dictionary with probability
 
-richardW -- 2016-12-15 4:13
+richardW -- 2016-12-15 04:13
 - fixed typing of form inputs
 - added separate file with the differences
 - edited readme
+
+jessicaY -- 2016-12-15 06:16
+- fixed image output
