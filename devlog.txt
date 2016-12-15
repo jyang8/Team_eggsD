@@ -59,6 +59,10 @@ issacK -- 2016-12-07 22:17
 - finish getRecipe, returns information using Yummly Api
 - returned information is ok, but not easy to read. 
 
+jerryC -- 2016-12-07 22:20
+- Finish routing for all routes
+- Include route for login (and related), list, and info
+
 issacK -- 2016-12-07 22:38
 - continued working on providing information more nicely
 - issue with unicode
@@ -90,6 +94,10 @@ richardW -- 2016-12-12 22:07
 - named the parameters for info.html
 - created the navigation for info.html
 
+jerryC -- 2016-12-12 22:34
+- Finished routing for images and info
+- Added routes for accounts
+
 issacK -- 2016-12-12 23:50
 - add more values for recipe information
 
@@ -108,6 +116,9 @@ jessicaY -- 2016-12-13 21:08
 issacK -- 2016-12-13 23:06
 - fixed issues with nutrition.py
 - changed api call for getNutrient so the nutrient list is more extensive
+
+jerryC -- 2016-12-13 23:42
+- Fixed remaining route issues
 
 richardW -- 2016-12-14 2:32
 - integrated nutrition and recipes to template
