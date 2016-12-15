@@ -66,7 +66,10 @@
     
     <div id="2" role="navigation">
      <h3>Articles</h3>
-     <p>{{articles}}</p>
+
+     {% for i in listInfo %}
+     <p>{{i}}</p>
+     {% endfor %}
     </div>
 
     <div id="3" role="navigation">
